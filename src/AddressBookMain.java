@@ -1,17 +1,20 @@
 import java.util.*;
 
-public class AddressBookMain
-{
+public class AddressBookMain {
     public static void main(String[] args) {
 
-        List<AddressBook> contact=new ArrayList<AddressBook>();
+        System.out.println("Welcome to Address Book Program!!");
 
-        Scanner sc=new Scanner(System.in);
+        System.out.println("===================================");
 
-        char userChoice='Y';
+        List<AddressBook> contact = new ArrayList<AddressBook>();
 
-        while (userChoice == 'Y') {
-            AddressBook a=new AddressBook();
+        Scanner sc = new Scanner(System.in);
+
+        String userChoice = "Yes";
+
+        while (userChoice.equalsIgnoreCase("yes")) {
+            AddressBook a = new AddressBook();
             System.out.println("Enter contact details to add into AddressBook");
 
             System.out.println("First_Name : ");
@@ -35,34 +38,50 @@ public class AddressBookMain
             System.out.println("Entered Contacts are :");
             System.out.println(contact);
 
-            System.out.println("Do you have more contacts to add ?: if yes press 'Y' or else 'N' :");
-            userChoice = sc.next().charAt(0);
+            System.out.println("Do you have more contacts to add ?: if yes press Yes or else No :");
+            userChoice = sc.next();
         }
 
-        String editChoice="Y";
-        while(editChoice.equalsIgnoreCase("Y"))
-        {
-            System.out.println("Do you wish to edit any contact's name : if yes press Y or else N :");
-            String x = sc.next();
+        System.out.println("Do you wish to edit any contact's name ?: if yes press Yes or else No :");
+        String editChoice = sc.next();
+        while (editChoice.equalsIgnoreCase("Yes")) {
+            System.out.println("Enter the user last name ");
+            String s = sc.next();
 
-            if (x.equalsIgnoreCase("Y"))
-            {
-                System.out.println("Enter the user last name ");
-                String s = sc.next();
-
-                for(AddressBook i : contact)
-                {
-                    if(s.equalsIgnoreCase(i.getLastName()))
-                    {
-                        System.out.println("Enter the new name :");
-                        i.setLastName(sc.next());
-                        System.out.println(contact);
-                    }
+            for (AddressBook i : contact) {
+                if (s.equalsIgnoreCase(i.getLastName())) {
+                    System.out.println("Enter the new name :");
+                    i.setLastName(sc.next());
+                    System.out.println(contact);
                 }
             }
-            else
-                return;
+            System.out.println("Do you wish to edit any contact's name ?: if yes press Yes or else No :");
+            editChoice = sc.next();
         }
 
+
+        System.out.println("Do you wish to delete any contact ?: if yes press Yes or else No :");
+        String deleteChoice = sc.next();
+        while (deleteChoice.equalsIgnoreCase("Yes")) {
+            System.out.println("Enter the user last name ");
+            String s = sc.next();
+
+            for (AddressBook i : contact) {
+                if (s.equalsIgnoreCase(i.getLastName())) {
+                    contact.remove(i);
+                    System.out.println(contact);
+                    break;
+                }
+            }
+            if(contact.isEmpty())
+                return;
+            System.out.println("Do you wish to delete contact ?: if yes press Yes or else NO :");
+            deleteChoice = sc.next();
+        }
     }
 }
+
+
+
+
+
