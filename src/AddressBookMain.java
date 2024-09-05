@@ -9,6 +9,7 @@ public class AddressBookMain
         Scanner sc=new Scanner(System.in);
 
         char userChoice='Y';
+
         while (userChoice == 'Y') {
             AddressBook a=new AddressBook();
             System.out.println("Enter contact details to add into AddressBook");
@@ -34,7 +35,7 @@ public class AddressBookMain
             System.out.println("Entered Contacts are :");
             System.out.println(contact);
 
-            System.out.println("Do you wish to add any contact details : if yes press 'Y' or else 'N' :");
+            System.out.println("Do you have more contacts to add ?: if yes press 'Y' or else 'N' :");
             userChoice = sc.next().charAt(0);
         }
 
