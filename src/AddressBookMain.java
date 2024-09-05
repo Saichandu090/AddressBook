@@ -38,5 +38,30 @@ public class AddressBookMain
             userChoice = sc.next().charAt(0);
         }
 
+        String editChoice="Y";
+        while(editChoice.equalsIgnoreCase("Y"))
+        {
+            System.out.println("Do you wish to edit any contact's name : if yes press Y or else N :");
+            String x = sc.next();
+
+            if (x.equalsIgnoreCase("Y"))
+            {
+                System.out.println("Enter the user last name ");
+                String s = sc.next();
+
+                for(AddressBook i : contact)
+                {
+                    if(s.equalsIgnoreCase(i.getLastName()))
+                    {
+                        System.out.println("Enter the new name :");
+                        i.setLastName(sc.next());
+                        System.out.println(contact);
+                    }
+                }
+            }
+            else
+                return;
+        }
+
     }
 }
