@@ -22,7 +22,8 @@ public class AddressBookMain
             List<AddressBook> contact = new ArrayList<AddressBook>();
             String userChoice = "Yes";
 
-            while (userChoice.equalsIgnoreCase("yes")) {
+            while (userChoice.equalsIgnoreCase("yes"))
+            {
                 AddressBook a = new AddressBook();
                 System.out.println("Enter contact details to add into AddressBook "+(j+1));
 
@@ -53,12 +54,15 @@ public class AddressBookMain
 
             System.out.println("Do you wish to edit any contact's name ?: if yes press Yes or else No :");
             String editChoice = sc.next();
-            while (editChoice.equalsIgnoreCase("Yes")) {
+            while (editChoice.equalsIgnoreCase("Yes"))
+            {
                 System.out.println("Enter the user last name ");
                 String s = sc.next();
 
-                for (AddressBook i : contact) {
-                    if (s.equalsIgnoreCase(i.getLastName())) {
+                for (AddressBook i : contact)
+                {
+                    if (s.equalsIgnoreCase(i.getLastName()))
+                    {
                         System.out.println("Enter the new name :");
                         i.setLastName(sc.next().toUpperCase());
                         System.out.println(contact);
@@ -71,19 +75,23 @@ public class AddressBookMain
 
             System.out.println("Do you wish to delete any contact ?: if yes press Yes or else No :");
             String deleteChoice = sc.next();
-            while (deleteChoice.equalsIgnoreCase("Yes")) {
+            while (deleteChoice.equalsIgnoreCase("Yes"))
+            {
                 System.out.println("Enter the user last name ");
                 String s = sc.next();
 
-                for (AddressBook i : contact) {
-                    if (s.equalsIgnoreCase(i.getLastName())) {
+                for (AddressBook i : contact)
+                {
+                    if (s.equalsIgnoreCase(i.getLastName()))
+                    {
                         contact.remove(i);
                         System.out.println(i.getLastName() + " contact deleted Successfully!!");
                         System.out.println(contact);
                         break;
                     }
                 }
-                if (contact.isEmpty()) {
+                if (contact.isEmpty())
+                {
                     System.out.println("Address Book is Empty");
                     break;
                 }
