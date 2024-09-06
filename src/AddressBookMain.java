@@ -16,105 +16,104 @@ public class AddressBookMain
 
         for(int j=0;j<count;j++)
         {
-            System.out.println("Enter the name of the Address Book "+(j+1));
-            String name = sc.next().toUpperCase();
-
-            List<AddressBook> contact = new ArrayList<AddressBook>();
-            String userChoice = "Yes";
-
-            while (userChoice.equalsIgnoreCase("yes"))
+            System.out.println("Please enter an unique name for the Address Book "+(j+1));
+            String name = sc.next();
+            if(mp.containsKey(name))
             {
-                AddressBook a = new AddressBook();
-                System.out.println("Enter contact details to add into AddressBook "+(j+1));
-
-                System.out.println("First_Name : ");
-                a.setFirstName(sc.next().toUpperCase());
-                System.out.println("Last_Name");
-                a.setLastName(sc.next().toUpperCase());
-                System.out.println("Address :");
-                a.setAddress(sc.next().toUpperCase());
-                System.out.println("City :");
-                a.setCity(sc.next().toUpperCase());
-                System.out.println("State :");
-                a.setState(sc.next().toUpperCase());
-                System.out.println("ZipCode :");
-                a.setZip(sc.nextInt());
-                System.out.println("PhoneNumber :");
-                a.setPhoneNumber(sc.nextLong());
-                System.out.println("Email :");
-                a.setEmail(sc.next());
-
-                contact.add(a);
-                System.out.println("Entered Contacts are :");
-                System.out.println(contact);
-
-                System.out.println("Do you have more contacts to add ?: if yes press Yes or else No :");
-                userChoice = sc.next();
+                System.out.println("Name already taken!!");
             }
-
-            System.out.println("Do you wish to edit any contact ?: if yes press Yes or else No :");
-            String editChoice = sc.next();
-            while (editChoice.equalsIgnoreCase("Yes"))
+            else
             {
-                System.out.println("Enter the user last name ");
-                String s = sc.next();
+                List<AddressBook> contact = new ArrayList<AddressBook>();
+                String userChoice = "Yes";
 
-                for (AddressBook i : contact)
+                while (userChoice.equalsIgnoreCase("yes"))
                 {
-                    if (s.equalsIgnoreCase(i.getLastName()))
-                    {
-                        System.out.println("Please provide the new details of '"+s.toUpperCase()+"'");
-                        System.out.println("First_Name : ");
-                        i.setFirstName(sc.next().toUpperCase());
-                        System.out.println("Last_Name");
-                        i.setLastName(sc.next().toUpperCase());
-                        System.out.println("Address :");
-                        i.setAddress(sc.next().toUpperCase());
-                        System.out.println("City :");
-                        i.setCity(sc.next().toUpperCase());
-                        System.out.println("State :");
-                        i.setState(sc.next().toUpperCase());
-                        System.out.println("ZipCode :");
-                        i.setZip(sc.nextInt());
-                        System.out.println("PhoneNumber :");
-                        i.setPhoneNumber(sc.nextLong());
-                        System.out.println("Email :");
-                        i.setEmail(sc.next());
-                        System.out.println(i+" details Updated Successfully!!");
-                    }
+                    AddressBook a = new AddressBook();
+                    System.out.println("Enter contact details to add into AddressBook " + (j + 1));
+
+                    System.out.println("First_Name : ");
+                    a.setFirstName(sc.next().toUpperCase());
+                    System.out.println("Last_Name");
+                    a.setLastName(sc.next().toUpperCase());
+                    System.out.println("Address :");
+                    a.setAddress(sc.next().toUpperCase());
+                    System.out.println("City :");
+                    a.setCity(sc.next().toUpperCase());
+                    System.out.println("State :");
+                    a.setState(sc.next().toUpperCase());
+                    System.out.println("ZipCode :");
+                    a.setZip(sc.nextInt());
+                    System.out.println("PhoneNumber :");
+                    a.setPhoneNumber(sc.nextLong());
+                    System.out.println("Email :");
+                    a.setEmail(sc.next());
+
+                    contact.add(a);
+                    System.out.println("Entered Contacts are :");
+                    System.out.println(contact);
+
+                    System.out.println("Do you have more contacts to add ?: if yes press Yes or else No :");
+                    userChoice = sc.next();
                 }
+
                 System.out.println("Do you wish to edit any contact ?: if yes press Yes or else No :");
-                editChoice = sc.next();
-            }
+                String editChoice = sc.next();
+                while (editChoice.equalsIgnoreCase("Yes")) {
+                    System.out.println("Enter the user last name ");
+                    String s = sc.next();
+
+                    for (AddressBook i : contact) {
+                        if (s.equalsIgnoreCase(i.getLastName())) {
+                            System.out.println("Please provide the new details of '" + s.toUpperCase() + "'");
+                            System.out.println("First_Name : ");
+                            i.setFirstName(sc.next().toUpperCase());
+                            System.out.println("Last_Name");
+                            i.setLastName(sc.next().toUpperCase());
+                            System.out.println("Address :");
+                            i.setAddress(sc.next().toUpperCase());
+                            System.out.println("City :");
+                            i.setCity(sc.next().toUpperCase());
+                            System.out.println("State :");
+                            i.setState(sc.next().toUpperCase());
+                            System.out.println("ZipCode :");
+                            i.setZip(sc.nextInt());
+                            System.out.println("PhoneNumber :");
+                            i.setPhoneNumber(sc.nextLong());
+                            System.out.println("Email :");
+                            i.setEmail(sc.next());
+                            System.out.println(i + " details Updated Successfully!!");
+                        }
+                    }
+                    System.out.println("Do you wish to edit any contact ?: if yes press Yes or else No :");
+                    editChoice = sc.next();
+                }
 
 
-            System.out.println("Do you wish to delete any contact ?: if yes press Yes or else No :");
-            String deleteChoice = sc.next();
-            while (deleteChoice.equalsIgnoreCase("Yes"))
-            {
-                System.out.println("Enter the user last name ");
-                String s = sc.next();
+                System.out.println("Do you wish to delete any contact ?: if yes press Yes or else No :");
+                String deleteChoice = sc.next();
+                while (deleteChoice.equalsIgnoreCase("Yes")) {
+                    System.out.println("Enter the user last name ");
+                    String s = sc.next();
 
-                for (AddressBook i : contact)
-                {
-                    if (s.equalsIgnoreCase(i.getLastName()))
-                    {
-                        contact.remove(i);
-                        System.out.println(i.getLastName() + " contact deleted Successfully!!");
-                        System.out.println(contact);
+                    for (AddressBook i : contact) {
+                        if (s.equalsIgnoreCase(i.getLastName())) {
+                            contact.remove(i);
+                            System.out.println(i.getLastName() + " contact deleted Successfully!!");
+                            System.out.println(contact);
+                            break;
+                        }
+                    }
+                    if (contact.isEmpty()) {
+                        System.out.println("Address Book is Empty");
                         break;
                     }
-                }
-                if (contact.isEmpty())
-                {
-                    System.out.println("Address Book is Empty");
-                    break;
-                }
 
-                System.out.println("Do you wish to delete contact ?: if yes press Yes or else NO :");
-                deleteChoice = sc.next();
+                    System.out.println("Do you wish to delete contact ?: if yes press Yes or else NO :");
+                    deleteChoice = sc.next();
+                }
+                mp.put(name, contact);
             }
-            mp.put(name,contact);
         }
         if(mp.isEmpty())
             return;
