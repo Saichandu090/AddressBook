@@ -75,15 +75,6 @@ public class AddressBook
 
     @Override
     public String toString() {
-        return "AddressBook{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", address='" + address + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", zip=" + zip +
-                ", phoneNumber=" + phoneNumber +
-                ", email='" + email + '\'' +
-                '}';
+        return "AddressBook [ FirstName : '"+firstName+"' ,LastName : '"+lastName+"' ,Address : '"+address+"' ,City : '"+city+"' ,State : '"+state+"' ,Zip : '"+zip+"' ,PhoneNumber : '"+phoneNumber+"' ,Email : '"+email+"']";
     }
 }
