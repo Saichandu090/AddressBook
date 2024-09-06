@@ -21,15 +21,15 @@ public class AddressBookMain
             System.out.println("Enter contact details to add into AddressBook");
 
             System.out.println("First_Name : ");
-            a.setFirstName(sc.next());
+            a.setFirstName(sc.next().toUpperCase());
             System.out.println("Last_Name");
-            a.setLastName(sc.next());
+            a.setLastName(sc.next().toUpperCase());
             System.out.println("Address :");
-            a.setAddress(sc.next());
+            a.setAddress(sc.next().toUpperCase());
             System.out.println("City :");
-            a.setCity(sc.next());
+            a.setCity(sc.next().toUpperCase());
             System.out.println("State :");
-            a.setState(sc.next());
+            a.setState(sc.next().toUpperCase());
             System.out.println("ZipCode :");
             a.setZip(sc.nextInt());
             System.out.println("PhoneNumber :");
@@ -57,7 +57,7 @@ public class AddressBookMain
                 if (s.equalsIgnoreCase(i.getLastName()))
                 {
                     System.out.println("Enter the new name :");
-                    i.setLastName(sc.next());
+                    i.setLastName(sc.next().toUpperCase());
                     System.out.println(contact);
                 }
             }
@@ -78,12 +78,17 @@ public class AddressBookMain
                 if (s.equalsIgnoreCase(i.getLastName()))
                 {
                     contact.remove(i);
+                    System.out.println(i.getLastName()+" contact deleted Successfully!!");
                     System.out.println(contact);
                     break;
                 }
             }
             if(contact.isEmpty())
+            {
+                System.out.println("Address Book is Empty");
                 break;
+            }
+
             System.out.println("Do you wish to delete contact ?: if yes press Yes or else NO :");
             deleteChoice = sc.next();
         }
