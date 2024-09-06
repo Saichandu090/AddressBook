@@ -1,7 +1,9 @@
 import java.util.*;
 
-public class AddressBookMain {
-    public static void main(String[] args) {
+public class AddressBookMain
+{
+    public static void main(String[] args)
+    {
 
         System.out.println("Welcome to Address Book Program!!");
 
@@ -13,7 +15,8 @@ public class AddressBookMain {
 
         String userChoice = "Yes";
 
-        while (userChoice.equalsIgnoreCase("yes")) {
+        while (userChoice.equalsIgnoreCase("yes"))
+        {
             AddressBook a = new AddressBook();
             System.out.println("Enter contact details to add into AddressBook");
 
@@ -44,12 +47,15 @@ public class AddressBookMain {
 
         System.out.println("Do you wish to edit any contact's name ?: if yes press Yes or else No :");
         String editChoice = sc.next();
-        while (editChoice.equalsIgnoreCase("Yes")) {
+        while (editChoice.equalsIgnoreCase("Yes"))
+        {
             System.out.println("Enter the user last name ");
             String s = sc.next();
 
-            for (AddressBook i : contact) {
-                if (s.equalsIgnoreCase(i.getLastName())) {
+            for (AddressBook i : contact)
+            {
+                if (s.equalsIgnoreCase(i.getLastName()))
+                {
                     System.out.println("Enter the new name :");
                     i.setLastName(sc.next());
                     System.out.println(contact);
@@ -62,19 +68,22 @@ public class AddressBookMain {
 
         System.out.println("Do you wish to delete any contact ?: if yes press Yes or else No :");
         String deleteChoice = sc.next();
-        while (deleteChoice.equalsIgnoreCase("Yes")) {
+        while (deleteChoice.equalsIgnoreCase("Yes"))
+        {
             System.out.println("Enter the user last name ");
             String s = sc.next();
 
-            for (AddressBook i : contact) {
-                if (s.equalsIgnoreCase(i.getLastName())) {
+            for (AddressBook i : contact)
+            {
+                if (s.equalsIgnoreCase(i.getLastName()))
+                {
                     contact.remove(i);
                     System.out.println(contact);
                     break;
                 }
             }
             if(contact.isEmpty())
-                return;
+                break;
             System.out.println("Do you wish to delete contact ?: if yes press Yes or else NO :");
             deleteChoice = sc.next();
         }
