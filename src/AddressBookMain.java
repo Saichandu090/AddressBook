@@ -52,7 +52,7 @@ public class AddressBookMain
                 userChoice = sc.next();
             }
 
-            System.out.println("Do you wish to edit any contact's name ?: if yes press Yes or else No :");
+            System.out.println("Do you wish to edit any contact ?: if yes press Yes or else No :");
             String editChoice = sc.next();
             while (editChoice.equalsIgnoreCase("Yes"))
             {
@@ -63,12 +63,27 @@ public class AddressBookMain
                 {
                     if (s.equalsIgnoreCase(i.getLastName()))
                     {
-                        System.out.println("Enter the new name :");
+                        System.out.println("Please provide the new details of '"+s.toUpperCase()+"'");
+                        System.out.println("First_Name : ");
+                        i.setFirstName(sc.next().toUpperCase());
+                        System.out.println("Last_Name");
                         i.setLastName(sc.next().toUpperCase());
-                        System.out.println(contact);
+                        System.out.println("Address :");
+                        i.setAddress(sc.next().toUpperCase());
+                        System.out.println("City :");
+                        i.setCity(sc.next().toUpperCase());
+                        System.out.println("State :");
+                        i.setState(sc.next().toUpperCase());
+                        System.out.println("ZipCode :");
+                        i.setZip(sc.nextInt());
+                        System.out.println("PhoneNumber :");
+                        i.setPhoneNumber(sc.nextLong());
+                        System.out.println("Email :");
+                        i.setEmail(sc.next());
+                        System.out.println(i+" details Updated Successfully!!");
                     }
                 }
-                System.out.println("Do you wish to edit any contact's name ?: if yes press Yes or else No :");
+                System.out.println("Do you wish to edit any contact ?: if yes press Yes or else No :");
                 editChoice = sc.next();
             }
 
